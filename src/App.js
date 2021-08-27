@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./components/Form/Form";
+import User from "./components/User/User";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [users, setAddUser] = useState([])
+  const addUser = (username, age) => {
+    setAddUser(prevState => {
+      const updatedUsers = [ ...prevState];
+      updatedUsers.unshift({username: username, age: age})
+      return updatedUsers;
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form onAddUser={addUser}/>
+      <User users={users}/>
+      <Modal> open={isOpen} onClose={() => setIsOpen(false)}
+        You must add users
+      </Modal> 
     </div>
   );
 }

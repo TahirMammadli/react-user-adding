@@ -1,0 +1,35 @@
+.form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+input{
+    width: 95%;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid darkmagenta;
+}
+
+label{
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.add-user-btn{
+    background-color: darkmagenta;
+    padding: 12px;
+    border: none;
+    color: white;
+    width: 120px;
+    cursor: pointer;
+}
+
