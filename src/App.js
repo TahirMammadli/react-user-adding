@@ -1,6 +1,7 @@
 import Form from "./components/Form/Form";
 import User from "./components/User/User";
 import { useState } from "react";
+import ErrorModal from "./components/ErrorModal/ErrorModal";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,9 +17,6 @@ function App() {
     <div>
       <Form onAddUser={addUser}/>
       <User users={users}/>
-      <Modal> open={isOpen} onClose={() => setIsOpen(false)}
-        You must add users
-      </Modal> 
     </div>
   );
 }
